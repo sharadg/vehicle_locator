@@ -1,0 +1,11 @@
+---
+applications:
+- name: vehicle-location-client
+  memory: 768M
+  instances: 1
+  random-route: true
+  path: target/vehicle-location-client-0.0.1-SNAPSHOT.jar
+  services:
+  - vehicle-service-registry
+  env:
+    TRUST_CERTS: api.sys.home.pcfdot.com
