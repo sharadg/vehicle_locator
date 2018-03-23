@@ -19,7 +19,7 @@ then:
     request {
         method 'GET'
         headers {
-            contentType(applicationJson())
+            accept(applicationJson())
         }
         urlPath('/locate') {
             queryParameters {
