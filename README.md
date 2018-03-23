@@ -22,7 +22,7 @@ This repo contains modules for Vehicle Locator application template for a custom
 4. Then, change over to `vehicle-location-client` and run the stubbed out Wiremock service functionality to test consumer in isolation.
   Once, the consumer piece is finished, make sure to uncomment the following pieces to run in full-online mode (i.e. location service is running and accessible)
 
-  In [pom.xml](./blob/master/vehicle-location-client/pom.xml)
+  In [pom.xml](./vehicle-location-client/pom.xml)
   ```
   <dependency>
           <groupId>io.pivotal.spring.cloud</groupId>
@@ -30,7 +30,7 @@ This repo contains modules for Vehicle Locator application template for a custom
   </dependency>
   ```
 
-  In [VehicleClientController.java](./blob/master/vehicle-location-client/src/main/java/com/workshop/vehiclelocationclient/VehicleClientController.java)
+  In [VehicleClientController.java](./vehicle-location-client/src/main/java/com/workshop/vehiclelocationclient/VehicleClientController.java)
   ```
   @HystrixCommand(fallbackMethod = "getDefaultVehicleDetails")
   public Vehicle getDetails(@RequestParam(name = "vehicle") String vehicle) {
@@ -38,7 +38,7 @@ This repo contains modules for Vehicle Locator application template for a custom
   UriComponentsBuilder builder = UriComponentsBuilder.fromUriString("http://vehicle-location-service/locate");
   ```
 
-  In [VehicleLocationClientApplication.java](./blob/master/vehicle-location-client/src/main/java/com/workshop/vehiclelocationclient/VehicleLocationClientApplication.java)
+  In [VehicleLocationClientApplication.java](./vehicle-location-client/src/main/java/com/workshop/vehiclelocationclient/VehicleLocationClientApplication.java)
   ```
   @LoadBalanced
   ```
