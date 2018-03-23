@@ -23,6 +23,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<spring-cloud.version>Edgware.SR2</spring-cloud.version>
+		<spring-cloud-contract.version>1.2.3.BUILD-SNAPSHOT</spring-cloud-contract.version>
 	</properties>
 
 	<dependencies>
@@ -54,10 +55,10 @@
 			<groupId>io.pivotal.spring.cloud</groupId>
 			<artifactId>spring-cloud-services-starter-service-registry</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>io.pivotal.spring.cloud</groupId>
-			<artifactId>spring-cloud-services-starter-circuit-breaker</artifactId>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>io.pivotal.spring.cloud</groupId>-->
+			<!--<artifactId>spring-cloud-services-starter-circuit-breaker</artifactId>-->
+		<!--</dependency>-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>

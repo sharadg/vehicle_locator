@@ -20,11 +20,16 @@ public class VehicleClientController {
     @Autowired
     private RestTemplate restTemplate;
 
+    //Comment out next line for WebMock testing since we are running locally with no running locator service
+    //@HystrixCommand(fallbackMethod = "getDefaultVehicleDetails")
     @RequestMapping(method = RequestMethod.GET, value = "/locate")
-    @HystrixCommand(fallbackMethod = "getDefaultVehicleDetails")
     public Vehicle getDetails(@RequestParam(name = "vehicle") String vehicle) {
 
-        UriComponentsBuilder builder = UriComponentsBuilder.fromUriString("http://vehicle-location-service/locate");
+        //Comment out next line for WebMock testing since we are running locally with no running locator service
+        //UriComponentsBuilder builder = UriComponentsBuilder.fromUriString("http://vehicle-location-service/locate");
+
+        //UnComment next line for WebMock testing since we are running locally with no running locator service
+        UriComponentsBuilder builder = UriComponentsBuilder.fromUriString("http://localhost:8090/locate");
         builder.queryParam("vehicle", vehicle);
         ResponseEntity<Vehicle> lookupV = restTemplate.getForEntity(builder.toUriString(), Vehicle.class);
 

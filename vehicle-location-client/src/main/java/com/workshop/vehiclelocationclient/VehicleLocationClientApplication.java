@@ -19,7 +19,8 @@ public class VehicleLocationClientApplication {
 	}
 
 	@Bean
-	@LoadBalanced
+	//Comment out next line for WebMock testing since we are running locally with no running locator service
+	//@LoadBalanced
 	public RestTemplate restTemplate(RestTemplateBuilder builder) {
 		return builder.build();
 	}
