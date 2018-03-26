@@ -7,5 +7,6 @@ applications:
   path: target/vehicle-location-service-0.0.1-SNAPSHOT.jar
   services:
   - vehicle-service-registry
+  - rabbitmq
   env:
-    TRUST_CERTS: api.sys.home.pcfdot.com
+    TRUST_CERTS: api.sys.az.pcfdot.com
